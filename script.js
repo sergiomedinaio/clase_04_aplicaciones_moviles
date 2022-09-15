@@ -7,6 +7,13 @@ var app = new Vue({
     codigoHtml: '<h1>Titulo de pagina </h1>',
     estaChequeado: false,
     listaDeElementos: []
+  },
+  methods: {
+    //agregartexto: function(){...},
+    //agregarTitulo: function(){...},
+    mostrarTextoEnConsola: function() {
+      console.log("TEXTO EN CONSOLA");
+    },
   }
 })
 
