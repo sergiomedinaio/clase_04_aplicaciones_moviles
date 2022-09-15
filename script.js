@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    listaEmails: [],
     email: '',
     contador: 0,
     message: 'Hola Vue!',
@@ -17,6 +18,10 @@ var app = new Vue({
     },
     enviar: function() {
       alert("Estamos enviando");
+    },
+    agregarEmail: function() {
+      this.listaEmails.push(this.email);
+      this.email = "";
     }
   }
 })
