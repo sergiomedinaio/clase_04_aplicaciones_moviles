@@ -11,7 +11,8 @@
 
 <body>
   <div id="app">
-
+    <!--button v-on:click="mostrarTextoEnConsola">MOSTRAR TEXTO</button-->
+    <input @keyup.enter="enviar" v-model="email"/>
     <!--input v-on:keyup.enter="enviar" v-model="email"/-->
     <button @click="mostrarTextoEnConsola">MOSTRAR TEXTO</button>
   </div>
