@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="app">
+    <p v-once> {{ message }} </p>
+    <div style="border: 1px solid #000;" v-bind:class="!estaChequeado ? 'hayUnError': 'estaBien'">
+      <p>Comodín</p>
+      <div v-html="codigoHtml"></div>
+    </div>
+    <button v-if="mostrarBoton">Enviar mensaje</button>
+    <input type="checkbox" v-model="estaChequeado"/>
+
+    <div class="contadorContainer">
+      <p v-if="contador > 5">El contador es mayor a cinco ({{contador}})</p>
+      <p v-if="contador == 5"> El contador es cinco  ({{contador}})</p>
+      <p v-if="contador < 5"> El contador es menor a cinco  ({{contador}})</p>
+    </div>
+    <div class="contadorContainer">
+      <p v-show="contador > 5">El contador es mayor a cinco ({{contador}})</p>
+      <p v-show="contador == 5"> El contador es cinco  ({{contador}})</p>
+      <p v-show="contador < 5"> El contador es menor a cinco  ({{contador}})</p>
+    </div>
+
+    <div class="listaContenedor">
+      Lista de elementos renderizada sin usar template
+      <ul>
+        <li v-for="item in listaDeElementos" :key="item.id" v-if="item.enable">
+          Si querés hablar con alguien de {{item.texto}}, nombralo como {{item.aclaracion}}, y no te olvides de agregar el código de área: {{item.codigoArea}} 
+        </li>
+      </ul>
+      Lista de elementos renderizada con template
+        <template v-for="(item, index) in listaDeElementos">
+          <p>
+            ({{index}}) Si querés hablar con alguien de {{item.texto}}, nombralo como {{item.aclaracion}}
+          </p>
+          <p style="background: #ccc;">
+            ({{index}}) y no te olvides de agregar el código de área: {{item.codigoArea}} 
+          </p>
+          <ul>
+            <li v-for="(value, key) of item">{{key}}: {{value}}</li>
+          </ul>
+        </template>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+  
+  <script src="script.js"></script>
+
+ <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+</body>
+
+</html>
