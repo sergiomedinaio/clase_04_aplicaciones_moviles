@@ -29,7 +29,7 @@
         </div>        
       </li>
     </ul>
-
+    <h1 v-if="obtenerEmailsVisibles().length == 0">Por favor, ingrese un email</h1>
     <button v-if="obtenerEmailsVisibles().length >= 5" @click="limpiarListaEmail" type="button" class="btn btn-primary btn-lg">Enviar emails masivos</button>
 
   </div>
