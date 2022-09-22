@@ -18,7 +18,16 @@
     <!--button @click="mostrarTextoEnConsola">MOSTRAR TEXTO</button-->
     <button @click="agregarEmail" type="button" class="btn btn-primary btn-lg">agregar email</button>
 
-    <p>{{listaEmails}}</p>
+    <ul>
+      <li v-for="email in listaEmails">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            {{email}}
+          </label>
+        </div>        
+      </li>
+    </ul>
   </div>
   
   <script src="script.js"></script>
