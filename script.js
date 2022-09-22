@@ -22,6 +22,8 @@ var app = new Vue({
     agregarEmail: function() {
       this.listaEmails.push(this.email);
       this.email = "";
+    limpiarListaEmail: function () {
+      this.listaEmails = [];
     }
   }
 })

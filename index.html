@@ -28,6 +28,9 @@
         </div>        
       </li>
     </ul>
+
+    <button v-if="listaEmails.length >= 5" @click="limpiarListaEmail" type="button" class="btn btn-primary btn-lg">Enviar emails masivos</button>
+
   </div>
   
   <script src="script.js"></script>
