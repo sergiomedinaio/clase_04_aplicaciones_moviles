@@ -16,7 +16,7 @@
     <input type="email" @keyup.enter="enviar" v-model="email"/>
     <!--input v-on:keyup.enter="enviar" v-model="email"/-->
     <!--button @click="mostrarTextoEnConsola">MOSTRAR TEXTO</button-->
-    <button @click="agregarEmail">agregar email</button>
+    <button @click="agregarEmail" type="button" class="btn btn-primary btn-lg">agregar email</button>
 
     <p>{{listaEmails}}</p>
   </div>
