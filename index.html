@@ -16,20 +16,21 @@
     <input type="email" @keyup.enter="enviar" v-model="email"/>
     <!--input v-on:keyup.enter="enviar" v-model="email"/-->
     <!--button @click="mostrarTextoEnConsola">MOSTRAR TEXTO</button-->
-    <button @click="agregarEmail" type="button" class="btn btn-primary btn-lg">agregar email</button>
+    <button @click="agregarEmail" type="button" class="btn btn-primary btn-sm">agregar email</button>
+    <button @click="eliminarEmail" type="button" class="btn btn-danger btn-sm">eliminar email</button>
 
     <ul>
-      <li v-for="email in listaEmails" style="list-style: none;">
+      <li v-for="item in listaEmails" style="list-style: none;" v-if="item.show">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <input class="form-check-input" type="checkbox" v-model="item.check" id="flexCheckDefault">
           <label class="form-check-label" for="flexCheckDefault">
-            {{email}}
+            {{item.email}} {{item.check ? '(Seleccionado)' : ''}}
           </label>
         </div>        
       </li>
     </ul>
 
-    <button v-if="listaEmails.length >= 5" @click="limpiarListaEmail" type="button" class="btn btn-primary btn-lg">Enviar emails masivos</button>
+    <button v-if="obtenerEmailsVisibles().length >= 5" @click="limpiarListaEmail" type="button" class="btn btn-primary btn-lg">Enviar emails masivos</button>
 
   </div>
   
